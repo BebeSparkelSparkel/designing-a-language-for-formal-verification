@@ -92,4 +92,11 @@ The future might lie in unifying these concepts, giving us the best of both worl
 
 What do you think? Are modules truly distinct from functions, or are they just a specialized syntax for a particular kind of functional abstraction? Let me know your thoughts below! 
 
+**License**: This article is licensed under
+[Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
+(CC BY-SA 4.0). You are free to share and adapt this material, provided you
+give appropriate credit, provide a link to the license, and indicate if changes
+were made. If you remix, transform, or build upon the material, you must
+distribute your contributions under the same license as the original.
+
 #ProgrammingLanguages #TypeTheory #FunctionalProgramming

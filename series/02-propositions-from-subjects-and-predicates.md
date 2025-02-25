@@ -150,3 +150,11 @@ Bitcoins Transaction Validator and Consensus Module show how Propositions captur
 Tactics transform these into SPPs, making verification practical.
 This framework lets you craft rich claims and prove them rigorously, flexible to your own tools and designs.
 
+**License**: This article is licensed under
+[Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
+(CC BY-SA 4.0). You are free to share and adapt this material, provided you
+give appropriate credit, provide a link to the license, and indicate if changes
+were made. If you remix, transform, or build upon the material, you must
+distribute your contributions under the same license as the original.
+
+#Add #Some #Hashtags

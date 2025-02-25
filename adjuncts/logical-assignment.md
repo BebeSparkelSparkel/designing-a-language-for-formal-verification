@@ -172,6 +172,13 @@ Future developments in programming languages can build on this knowledge,
 choosing notation that best serves their specific needs while remaining
 grounded in the underlying logical equivalence of these relationships.
 
+**License**: This article is licensed under
+[Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
+(CC BY-SA 4.0). You are free to share and adapt this material, provided you
+give appropriate credit, provide a link to the license, and indicate if changes
+were made. If you remix, transform, or build upon the material, you must
+distribute your contributions under the same license as the original.
+
 ---
 references:
 - id: backus1978

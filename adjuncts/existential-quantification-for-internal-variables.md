@@ -85,4 +85,11 @@ letting $\exists$ do the work often leads to cleaner definitions than trying to 
 
 Have you found other examples where existential quantification simplifies definitions? Share your insights!
 
+**License**: This article is licensed under
+[Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
+(CC BY-SA 4.0). You are free to share and adapt this material, provided you
+give appropriate credit, provide a link to the license, and indicate if changes
+were made. If you remix, transform, or build upon the material, you must
+distribute your contributions under the same license as the original.
+
 #MathematicalLogic #ProgrammingLanguages #TypeTheory #FormalMethods #CompSci

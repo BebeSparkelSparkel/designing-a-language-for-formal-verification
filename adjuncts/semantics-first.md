@@ -49,4 +49,11 @@ The conventional wisdom of syntax-first design may be backward. Perhaps it's tim
 
 What do you think? Have you worked on language design projects that started with semantics rather than syntax? How did it affect the final result? Let's discuss different approaches to language design and what we might learn from them.
 
- #LanguageDesign #Compiler #CompilerTheory #CompilerDesign #SemanticProgramming
+**License**: This article is licensed under
+[Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
+(CC BY-SA 4.0). You are free to share and adapt this material, provided you
+give appropriate credit, provide a link to the license, and indicate if changes
+were made. If you remix, transform, or build upon the material, you must
+distribute your contributions under the same license as the original.
+
+#LanguageDesign #Compiler #CompilerTheory #CompilerDesign #SemanticProgramming
