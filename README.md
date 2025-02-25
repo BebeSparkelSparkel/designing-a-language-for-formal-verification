@@ -181,6 +181,35 @@ This is the definition that will appear on a new line in GitHub rendering and
 should not be fomatted like this.
 ```
 
+#### Indentation
+
+All indentation in Markdown files must use exactly two (2) spaces. This applies
+to:
+
+- List items and their continuations
+- Code block contents
+- Blockquotes
+- Nested elements
+
+```markdown
+- This is a list item
+  with a continuation line
+  - This is a nested list item
+    with its own continuation line
+```
+
+Never use three-space indentation under any circumstances. Three-space
+indentation causes inconsistencies in rendering and harms maintainability.
+
+```markdown
+# Do not do this:
+- List item
+   with three spaces (incorrect)
+```
+
+Do not use tabs for indentation, as they can display differently across editors
+and platforms.
+
 ### Math Expression Formatting
 
 #### Inline and Block Math
