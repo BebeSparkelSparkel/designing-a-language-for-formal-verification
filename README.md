@@ -258,3 +258,27 @@ formatted source markdown makes maintenance easier.
 
 Remember to follow these guidelines strictly to ensure articles render
 correctly on both GitHub and X via Pandoc.
+
+## License Information
+
+All articles in this repository are licensed under the Creative Commons
+Attribution-ShareAlike 4.0 International Public License (CC BY-SA 4.0). Each
+article must include a license notice using the following format:
+
+```markdown
+[Article content here...]
+
+---
+
+**License**: This article is licensed under
+[Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
+(CC BY-SA 4.0). You are free to share and adapt this material, provided you
+give appropriate credit, provide a link to the license, and indicate if changes
+were made. If you remix, transform, or build upon the material, you must
+distribute your contributions under the same license as the original.
+
+#X #Hashtags #Go #Below #License
+EOF
+```
+
+`EOF`: End of File and should not actually be included in the document.
