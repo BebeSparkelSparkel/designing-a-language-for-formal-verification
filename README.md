@@ -73,4 +73,50 @@ additional digits are for insertions only.
 
 This approach keeps the series organized, scalable, and easy to maintain!
 
+## Rendering Articles for Publication on X
+
+To render GitHub-flavored Markdown (GFM) articles from this repository for
+publication on X, use the following command pipeline.
+This pipeline handles all contingencies, including converting GFM to HTML,
+escaping special characters (like curly braces), and ensuring proper formatting
+(e.g., removing problematic line breaks after HTML elements).
+
+### Explanation
+
+**Input**: Assumes your article is in GFM format (e.g., `article.md`).
+
+**Pandoc**: Converts GFM to HTML with ASCII escapes for compatibility with X's
+post editor.
+
+**Sed**: Fixes incompatibilities with curly braces `{}` by removing unnecessary
+double escapes (common in GFM math blocks).
+
+**Tr**: Removes line breaks directly after HTML elements to prevent formatting
+issues (e.g., no space between text and math spans).
+
+**Output**: Pipes the final HTML to your clipboard for easy pasting into X's
+Post or Article editor.
+
+### Command
+
+```sh
+cat article.md | sed 's/\\\(\\[{}]\)/\1/g' | pandoc --ascii -f gfm -t html | tr '\n' ' ' | xclip -selection clipboard
+```
+
+`| xclip -selection clipboard` can be replaced with `> article.html` if you
+want to create a file instead of copying to clipboard.
+
+### Notes
+
+Replace `article.md` with the path to your specific Markdown file.
+
+Ensure `pandoc`, `sed`, `tr`, and `xclip` are installed on your system. On
+Ubuntu/Debian, install with `sudo apt install pandoc xclip`. On macOS, use
+`brew install pandoc xclip`.
+
+After running the command, paste the HTML directly into X's Post or Article
+editor and verify the formatting.
+
+This pipeline is optimized for GFM articles in this repository and accounts for
+the issues discussed in the thread (e.g., math blocks, line breaks).
 
