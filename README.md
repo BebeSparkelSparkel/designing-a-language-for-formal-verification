@@ -120,3 +120,141 @@ editor and verify the formatting.
 This pipeline is optimized for GFM articles in this repository and accounts for
 the issues discussed in the thread (e.g., math blocks, line breaks).
 
+## Formatting Guidelines
+
+All articles in this repository must adhere to a unified GitHub-flavored
+Markdown (GFM) format that is also fully compatible with Pandoc for rendering
+to HTML for publication on X. These guidelines ensure consistent composition
+for contributors, editors, and maintainers.
+
+### Standard GFM Features
+
+For the baseline syntax and features of GFM (e.g., headings, lists, code
+blocks, links, emphasis), refer to the official GitHub documentation:
+
+- [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)
+
+### Document Structure and Formatting
+
+#### Element Separation
+
+Markdown elements require proper newline separation to prevent Pandoc from
+concatenating them into a single line. Always include blank lines between
+different elements:
+
+```markdown
+This is a paragraph.
+
+- This is a list item
+- Another list item
+
+This is another paragraph.
+```
+
+Not:
+
+```markdown
+This is a paragraph.
+- This is a list item
+- Another list item
+This is another paragraph.
+```
+
+#### Colons and Line Continuation
+
+GitHub has specific formatting behavior where lines ending with a colon prevent
+concatenation with the following line. This is particularly important for term
+definitions:
+
+```markdown
+Definition term:
+This is the definition that will appear on a new line in GitHub rendering.
+```
+
+### Math Expression Formatting
+
+#### Inline and Block Math
+
+Use single-dollar signs for inline math (`$...$`) and avoid display math blocks
+when possible:
+
+```markdown
+Inline math example: $E = mc^2$
+```
+
+#### Multi-line Math Expressions
+
+For multi-line math expressions, use standalone newline-separated inline math
+for each line:
+
+```markdown
+$\int_a^b f(x) dx$
+
+$= F(b) - F(a)$
+```
+
+Rather than trying to use backslash line breaks in a display math block:
+
+```markdown
+$$
+\int_a^b f(x) dx \\
+= F(b) - F(a)
+$$
+```
+
+#### Curly Braces in Math
+
+If your article includes math expressions using curly braces, use double
+backslashes (`\\{` or `\\}`) to escape them:
+
+```markdown
+$T(n) = aT(n/b) + \\{f(n)\\}$
+```
+
+Note: The `sed` command in the rendering pipeline will remove the extra
+backslashes when publishing to X.
+
+### Character and Text Handling
+
+#### ASCII Characters Only
+
+Articles should only use ASCII characters. Avoid non-ASCII characters like
+curly quotes, em-dashes, or accented letters. The `--ascii` option in the
+rendering pipeline will convert these, but it's better to avoid them from the
+start.
+
+#### Line Width
+
+For better readability in source files, we recommend limiting line widths to 80
+characters. This improves the readability of raw markdown files and makes git
+diffs more meaningful by showing changes at a word level.
+
+The Unix `fold -s` command can be helpful for this purpose, as it wraps lines
+at word boundaries. However, `fold -s` often leaves trailing whitespace at the
+end of wrapped lines. To address this, you can pipe the output through `sed` to
+remove trailing whitespace:
+
+```sh
+fold -s -w 80 input.md | sed 's/[[:space:]]*$//' > output.md
+```
+
+Be cautious when using automated tools like `fold` with code blocks or other
+formatted content, as they may disrupt the intended formatting. Manual line
+wrapping is preferred in these cases.
+
+### Publishing and Verification
+
+#### Testing Your Markdown
+
+- Test your Markdown in a GFM viewer (e.g., GitHub's preview) before submission
+- For a final check, use the rendering pipeline described in the "Rendering
+  Articles for Publication on X" section
+
+#### Rendering Pipeline Notes
+
+The rendering pipeline handles certain format conversions (like double escapes
+for curly braces and line breaks after HTML elements), but writing correctly
+formatted source markdown makes maintenance easier.
+
+Remember to follow these guidelines strictly to ensure articles render
+correctly on both GitHub and X via Pandoc.
