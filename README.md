@@ -282,3 +282,19 @@ EOF
 ```
 
 `EOF`: End of File and should not actually be included in the document.
+
+### X Articles Compatibility
+
+Articles will be published to X Articles using the rendering pipeline, follow this content
+structure for compatibility:
+
+1. **Article Content**: The main body of your article
+2. **Call to Action**: Include an engaging question or prompt before the
+    license notice to encourage reader interaction (e.g., "What do you think
+    about this approach to formal verification? Share your thoughts below!")
+3. **License Notice**: The full CC BY-SA 4.0 license text as specified in the
+    License Information section
+4. **Hashtags**: Place below the license notice
+  - Separate multiple hashtags with spaces `#Tag1 #Tag2 #Tag3`
+  - Include both specific article topics and broader categories
+    `#FormalVerification #ProgrammingLanguage`
