@@ -164,11 +164,21 @@ This is another paragraph.
 
 GitHub has specific formatting behavior where lines ending with a colon prevent
 concatenation with the following line. This is particularly important for term
-definitions:
+definitions.
+
+Proper formatting:
+
+```markdown
+Definition term: This definition is correctly formatted and the can be split
+between lines in the middle of the defining statement.
+```
+
+Improper formatting:
 
 ```markdown
 Definition term:
-This is the definition that will appear on a new line in GitHub rendering.
+This is the definition that will appear on a new line in GitHub rendering and
+should not be fomatted like this.
 ```
 
 ### Math Expression Formatting
