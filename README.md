@@ -1,4 +1,4 @@
-# designing-a-language-for-formal-verification
+# Designing a Language for Formal Verification
 
 Series of articles that explain the aspects of designing a programming language
 that includes formal verification.
