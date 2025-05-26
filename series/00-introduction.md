@@ -1,24 +1,22 @@
-# DRAFT
-
 # Designing a Language for Formal Verification: Introduction and Purpose
 
 ## The Problem with Current Approaches
 
-Programming language design has long been dominated by type systems. From C's primitive types to Haskell's algebraic data types to Idris's dependent types, the evolution has focused on increasingly sophisticated ways to constrain programs at compile time. Yet despite these advances, bugs persist. Security vulnerabilities multiply. And formal verification—the holy grail of software correctness—remains largely inaccessible to everyday developers.
+Programming language design has long been dominated by type systems. From C's primitive types to Haskell's algebraic data types to Idris's dependent types, the evolution has focused on increasingly sophisticated ways to constrain programs at compile time. Yet despite these advances, bugs persist. Security vulnerabilities multiply. And formal verification—the holy grail of software correctness—remains largely inaccessible.
 
 Why? Because **types are merely poor implementations of proofs**.
 
 Consider TypeScript, a language created by a team of hundreds, spamming nearly a million lines of code across thousands of files. Its type system is powerful but ultimately limited by its fundamental design: types serve as proxies for properties we actually care about. They hint at behavior without directly expressing or verifying it. Even the most advanced dependent type systems struggle to bridge this gap between what we can type and what we need to prove.
 
-## A New Foundation: Burning It Down
+## A New Hope
 
 This series explores a radical premise: What if we built programming languages around propositions and their proofs instead of types?
 
 Rather than starting with syntax or even with a type system, I propose returning to first principles. The foundation of a verification-oriented language should begin with the core elements of logical reasoning, which will be explored in detail in subsequent articles.
 
-This is not merely academic. By reimagining language design from the ground up, we might create systems where verification isn't a burdensome afterthought but the natural way to program.
+This is not merely academic. By re-imagining language design from the ground up, we might create systems where verification isn't a burdensome afterthought but the natural way to program.
 
-## Beyond Coq and Agda: A Different Path
+## Beyond What Is: A Different Path
 
 Existing verification systems like Coq and Agda offer powerful capabilities but follow divergent philosophies. Coq emphasizes tactics and proofs but maintains a separation between program construction and verification. Agda unifies proofs and programs through dependent types but often sacrifices flexibility for correctness guarantees.
 
@@ -26,7 +24,6 @@ The approach outlined in this series differs from both:
 
 - Unlike Coq, it seeks to integrate verification directly into the core language rather than as a separate layer
 - Unlike Agda, it doesn't force all code through the bottleneck of a type system
-- Unlike both, it follows a semantic-first approach that defers syntax decisions until the meaning is clear
 
 By leveraging tactics like Coq while avoiding the constraints of a traditional type system, this approach aims to provide flexibility in when and how verification occurs. Properties can remain dynamic unless explicitly constrained by propositions, which must then be proven.
 
@@ -46,7 +43,7 @@ This semantic-first approach enables us to reason more deeply about program prop
 
 ## The Practical Benefits: Working Smarter, Not Larger
 
-A small team cannot hope to match the resources behind a TypeScript or a Rust. But they can work smarter by leveraging formal methods.
+A small team obviously cannot match the resources expended to produce works like Chromium or Microsoft Windows. But they can work smarter by leveraging formal methods.
 
 By building verification into the core of a language, we can:
 
@@ -55,7 +52,7 @@ By building verification into the core of a language, we can:
 3. Enable progressive verification where critical components receive more scrutiny
 4. Maintain correctness during evolution and refactoring
 
-The compiler itself becomes an active partner in development rather than a gatekeeper, helping construct proofs that programs behave as intended.
+For a small team, progressive formal methods offer a strategic edge. They enable rapid, Python-like prototyping that can evolve into rock-solid, production-ready software by specifying critical checks and addressing flagged requirements, all without the massive resources of large-scale software projects.
 
 ## What This Series Will Cover
 
