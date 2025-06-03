@@ -40,7 +40,7 @@ to-clipboard:
 	@if [ -z "$(FILE)" ]; then \
 		echo "Usage: make to-clipboard FILE=path/to/file.md"; \
 	else \
-		cat $(FILE) | $(SED) 's/\\\(\\[{}]\)/\1/g' | $(PANDOC) $(PANDOC_OPTS) | $(TR) '\n' ' ' | xclip -selection clipboard && \
+		cat $(FILE) | $(SED) 's/\\\(\\[{}]\)/\1/g' | $(SED) -f mark-code-block-newlines.sed | $(PANDOC) $(PANDOC_OPTS) | $(SED) 's/A/908345a0978235/g' | $(SED) 's/lf492317/A/g' | $(TR) '\nA' ' \n' |  $(SED) 's/908345a0978235/A/g' | xclip -selection clipboard && \
 		echo "Content from $(FILE) has been copied to clipboard for X"; \
 	fi
 
@@ -48,7 +48,7 @@ to-clipboard:
 $(BUILD_DIR)/%.html: %.md
 	@echo "Converting $< to $@"
 	@mkdir -p $(dir $@)
-	@cat $< | $(SED) 's/\\\(\\[{}]\)/\1/g' | $(PANDOC) $(PANDOC_OPTS) | $(TR) '\n' ' ' > $@
+	@cat $< | $(SED) 's/\\\(\\[{}]\)/\1/g' | $(SED) -f mark-code-block-newlines.sed | $(PANDOC) $(PANDOC_OPTS) | $(SED) 's/A/908345a0978235/g' | $(SED) 's/lf492317/A/g' | $(TR) '\nA' ' \n' |  $(SED) 's/908345a0978235/A/g' > $@
 
 # Generate a list of all available documents
 .PHONY: list
