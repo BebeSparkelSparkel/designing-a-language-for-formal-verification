@@ -4,6 +4,43 @@
 
 Proving function totality.
 
+# Notes for Article 05: Function Totality
+
+## Totality Verification Across Representations
+
+**Multi-Level Totality:**
+- Source level: Syntactic completeness, all code paths covered
+- Parse tree level: Structural integrity, proper AST formation
+- IR level: Optimization preservation of totality properties
+- Machine code level: Runtime termination guarantees
+
+**Termination vs. Domain Coverage:**
+- **Termination**: `∀x ∈ domain(f) : ⊥ ≠ f(x)` (function terminates for all valid inputs)
+- **Domain Coverage**: Function handles entire intended input space
+- **Combined Totality**: Both termination and coverage must be proven
+
+## Subject Complexity for Totality
+
+**Function Subject Expansion:**
+- `f = {f_s, f_p, f_i, f_m, ...}` requires totality verification across all representation levels
+- **Tactical Challenge**: Coordinating totality proofs across compilation stages
+- **Predicate Responsibility**: `terminates` predicate must handle multi-level subject analysis
+
+**Dependency Analysis:**
+- Function totality may depend on totality of called functions
+- **Recursive Challenge**: Mutual recursion creates circular totality dependencies
+- **Resolution**: May require graph-based predicate internals for dependency tracking
+
+## Cross-Representation Consistency
+
+**Compilation Preservation:**
+- Totality proven at source level must be preserved through compilation
+- **Verification Challenge**: Prove that optimizations don't break totality guarantees
+- **Article 09 Connection**: Links to cross-representation propositions for compilation correctness
+
+These findings reveal that sophisticated predicates with embedded tactics become crucial for handling the complexity of real verification tasks while keeping the structural system clean and simple.
+
+
 # Notes for Articles 05 & 06: Additional Abstraction Layers
 
 ## Context

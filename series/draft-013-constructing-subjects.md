@@ -231,3 +231,23 @@ up next
 licence
 
 hashtags
+
+
+# Notes for Article 013: Constructing Subjects
+
+## Findings from Tactical Architecture Discussion
+
+**Predicates Drive Subject Complexity**: Our discussion revealed that sophisticated predicates (like `terminates`, `uses_memory(X)`) require complex subject analysis. This means **subject construction cannot be independent of predicate requirements**.
+
+**Subject Construction as Predicate Concern**: Rather than having a separate subject construction system, our findings suggest that predicates themselves are responsible for subject interpretation and manipulation. This shifts Article 013's focus from "how to build subjects" to "how subjects interface with predicate requirements."
+
+**Structural vs. Semantic Subject Handling**: The tactical architecture discussion revealed that subjects exist in two contexts:
+- **Structural subjects**: For tactical manipulation (simple, tree-like operations)
+- **Semantic subjects**: For predicate evaluation (complex, potentially requiring graph-like internal representations)
+
+## Implementation Impact on Subject Design
+
+**Type Aliasing Implications**: If the underlying system uses type-aliased trees (`type Tree = Graph` with restricted operations), subject construction must work within these interface constraints while predicates can access full graph capabilities when needed for complex subject analysis.
+
+**Subject Construction Simplification**: Rather than building complex subject construction machinery, the architecture suggests keeping subject construction simple and pushing complexity into predicates that know what they need from subjects.
+
